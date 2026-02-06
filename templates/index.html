@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Detection using OpenCV</title>
+</head>
+<body>
+
+<h2>Face Detection using OpenCV</h2>
+
+<form action="/detect" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" required>
+    <br><br>
+    <button type="submit">Detect Face</button>
+</form>
+
+{% if faces is defined %}
+    <h3>Faces detected: {{ faces }}</h3>
+    <img src="{{ url_for('static', filename=image) }}" width="400">
+{% endif %}
+
+</body>
+</html>
